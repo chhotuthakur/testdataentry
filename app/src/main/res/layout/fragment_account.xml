@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AccountFragment">
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:src="@drawable/ic_launcher_foreground"
+    android:scaleType="fitCenter"
+    android:id="@+id/prof_img"
+    android:background="@color/cardview_dark_background"
+    android:layout_margin="10dp"
+    android:elevation="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID : 012312A"
+        android:textSize="22sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/prof_img"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:id="@+id/user_id_text"/>
+
+
+
+</RelativeLayout>
