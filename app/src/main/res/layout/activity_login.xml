@@ -44,9 +44,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:id="@+id/sbmbtn"
         android:layout_below="@id/tll2"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:backgroundTint="@android:color/holo_blue_dark"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/sbmbtn"
+        android:layout_marginTop="15dp"
+        android:id="@+id/progressBar"/>
 
 </RelativeLayout>
