@@ -60,13 +60,13 @@ public class AddFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_add, container, false);
 
         btn=(Button)view.findViewById(R.id.btn_submit);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getContext(), LoginActivity.class);
-                startActivity(i);
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getContext(), LoginActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 
 
