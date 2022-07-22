@@ -30,6 +30,8 @@ public class DataListAdapter extends RecyclerView.Adapter<DataListAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+
+
     }
 
     @Override
@@ -39,7 +41,10 @@ public class DataListAdapter extends RecyclerView.Adapter<DataListAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(@NonNull View itemView) {
+
+            
             super(itemView);
+
         }
     }
 }
