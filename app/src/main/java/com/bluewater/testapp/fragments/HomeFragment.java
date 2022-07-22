@@ -14,10 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bluewater.testapp.R;
 import com.bluewater.testapp.adapters.PlantAdapter;
@@ -88,50 +90,98 @@ public class HomeFragment extends Fragment {
     }
 
     private void getData() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //converting the string to json array object
+                            JSONArray array = new JSONArray(response);
+
+                            //traversing through all the object
+                            for (int i = 0; i < array.length(); i++) {
+
+                                //getting product object from json array
+                                JSONObject plantdata = array.getJSONObject(i);
+
+                                //adding the product to product list
+                                plantDataList.add(new PlantData(
+                                        plantdata.getString("volt"),
+                                        plantdata.getString("hppapms"),
+                                        plantdata.getString("rwpapms"),
+                                        plantdata.getString("tds"),
+                                        plantdata.getString("pfl"),
+                                        plantdata.getString("rfl"),
+                                        plantdata.getString("hp"),
+                                        plantdata.getString("lp"),
+                                        plantdata.getString("rp"),
+                                        plantdata.getString("toh"),
+                                        plantdata.getString("tvolm")
 
 
 
+                                ));
+                            }
 
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-                        JSONObject jsonObject = response.getJSONObject(i);
-
-                        PlantData plantData = new PlantData();
-                        plantData.setVolts(jsonObject.getString("volts"));
-                        plantData.setHpp(jsonObject.getString("hppapms"));
-                        plantData.setRwp(jsonObject.getString("rwpapms"));
-                        plantData.setTds(jsonObject.getString("tds"));
-                        plantData.setPfl(jsonObject.getString("pfl"));
-                        plantData.setRfl(jsonObject.getString("rfl"));
-                        plantData.setHp(jsonObject.getString("hp"));
-                        plantData.setLp(jsonObject.getString("lp" ));
-                        plantData.setRp(jsonObject.getString("rp"));
-                        plantData.setToh(jsonObject.getString("toh"));
-                        plantData.setTvol(jsonObject.getString("tvolm"));
-
-
-                        plantDataList.add(plantData);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                            //creating adapter object and setting it to recyclerview
+                            PlantAdapter adapter = new PlantAdapter(getContext(), plantDataList);
+                            recyclerView.setAdapter(adapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 
                     }
-                }
-                adapter.notifyDataSetChanged();
+                });
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Volley", error.toString());
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(jsonArrayRequest);
+        //adding our stringrequest to queue
+        Volley.newRequestQueue(getContext()).add(stringRequest);
 
     }
 }
+
+//    JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+//        @Override
+//        public void onResponse(JSONArray response) {
+//            for (int i = 0; i < response.length(); i++) {
+//                try {
+//                    JSONObject jsonObject = response.getJSONObject(i);
+//
+//                    PlantData plantData = new PlantData();
+//                    plantData.setVolts(jsonObject.getString("volts"));
+//                    plantData.setHpp(jsonObject.getString("hppapms"));
+//                    plantData.setRwp(jsonObject.getString("rwpapms"));
+//                    plantData.setTds(jsonObject.getString("tds"));
+//                    plantData.setPfl(jsonObject.getString("pfl"));
+//                    plantData.setRfl(jsonObject.getString("rfl"));
+//                    plantData.setHp(jsonObject.getString("hp"));
+//                    plantData.setLp(jsonObject.getString("lp" ));
+//                    plantData.setRp(jsonObject.getString("rp"));
+//                    plantData.setToh(jsonObject.getString("toh"));
+//                    plantData.setTvol(jsonObject.getString("tvolm"));
+//
+//
+//                    plantDataList.add(plantData);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//
+//                }
+//            }
+//            adapter.notifyDataSetChanged();
+//
+//        }
+//    }, new Response.ErrorListener() {
+//        @Override
+//        public void onErrorResponse(VolleyError error) {
+//            Log.e("Volley", error.toString());
+//
+//        }
+//    });
+//    RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+//        requestQueue.add(jsonArrayRequest);
+//
+//                }

@@ -1,10 +1,10 @@
 package com.bluewater.testapp.models;
 
 public class PlantData {
-    String volts,hpp,rwp,tds,pfl,rfl,hp,lp,rp,toh,tvol;
+    String volt,hpp,rwp,tds,pfl,rfl,hp,lp,rp,toh,tvol;
 
-    public PlantData() {
-        this.volts = volts;
+    public PlantData(String volt, String hpp, String rwp, String tds, String pfl, String rfl, String hp, String lp, String rp, String toh, String tvol) {
+        this.volt = volt;
         this.hpp = hpp;
         this.rwp = rwp;
         this.tds = tds;
@@ -18,11 +18,11 @@ public class PlantData {
     }
 
     public String getVolts() {
-        return volts;
+        return volt;
     }
 
     public void setVolts(String volts) {
-        this.volts = volts;
+        this.volt = volts;
     }
 
     public String getHpp() {
