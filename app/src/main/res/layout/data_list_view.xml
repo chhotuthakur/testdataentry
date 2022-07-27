@@ -18,10 +18,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:id="@+id/line1"
             android:padding="8dp"
             android:background="#ffccfc">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltage"
+                android:textSize="22sp"
+                android:layout_weight="1" />
 
             <TextView
             android:layout_width="wrap_content"
@@ -37,7 +43,13 @@
             android:orientation="horizontal"
             android:id="@+id/line2"
             android:padding="8dp"
-            android:background="@android:color/holo_blue_bright">
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HPP Amps"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,6 +58,21 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:padding="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/line3"
+            android:padding="8dp"
+            android:background="#FFCCFC">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RWP Amps"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,15 +81,23 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"/>
+
+
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/line3"
+            android:id="@+id/line4"
             android:padding="8dp"
-            android:background="#EDB7C9">
-
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TDS"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,6 +106,23 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/line5"
+            android:padding="8dp"
+            android:background="#ffccfc">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PFL"
+                android:textSize="22sp"
+                android:layout_weight="1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,14 +131,22 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"/>
+
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/line4"
-            android:padding="8dp"
-            android:background="#C59090">
+            android:id="@+id/line6"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RFL"
+                android:textSize="22sp"
+                android:layout_weight="1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,7 +154,21 @@
                 android:text="userid"
                 android:textSize="22sp"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginEnd="8dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/line7"
+            android:padding="8dp"
+            android:background="#ffccfc">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HP"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,13 +177,23 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"/>
+
+
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/line5"
-            android:layout_marginBottom="8dp">
+            android:id="@+id/line8"
+            android:padding="8dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LP"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,6 +202,23 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/line9"
+            android:padding="8dp"
+            android:background="#ffccfc">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RP"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,13 +227,23 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"/>
+
+
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/line6"
-            android:layout_marginBottom="8dp">
+            android:id="@+id/line10"
+            android:padding="8dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOH"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,6 +252,23 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/line11"
+            android:padding="8dp"
+            android:background="#EDB7C9">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Volume"
+                android:textSize="22sp"
+                android:layout_weight="1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,8 +276,16 @@
                 android:text="userid"
                 android:textSize="22sp"
                 android:layout_weight="1"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginStart="8dp"/>
+
+
+
         </LinearLayout>
     </LinearLayout>
+
+
+
+
+
 
 </RelativeLayout>

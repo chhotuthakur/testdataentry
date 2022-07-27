@@ -31,7 +31,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.github.mikephil.charting.charts.LineChart;
 
 public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
@@ -39,6 +39,10 @@ public class HomeFragment extends Fragment {
     List<PlantData> plantDataList;
     LinearLayoutManager linearLayoutManager;
     public static final String url ="https://login.nileshsinghdahiya.in/getdata.php";
+LineChart lineChart;
+    private static final String TAG = "HomeFragment";
+
+
 
 
     public HomeFragment() {
@@ -66,6 +70,15 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
+
+        //android chart line
+lineChart =(LineChart)view.findViewById(R.id.linechart);
+        showgraph();
+
+
+
+
+        //showing data from database
         recyclerView = view.findViewById(R.id.plant_data_list);
 
         plantDataList = new ArrayList<>();
@@ -87,6 +100,14 @@ public class HomeFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void showgraph() {
+
+//lineChart.setOnChartGestureListener(getActivity().getApplicationContext());
+//TODO: adding linechart using mysql data
+
+
     }
 
     private void getData() {

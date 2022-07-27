@@ -45,7 +45,6 @@ public class AccountFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_account, container, false);
 
         if (!SharedPrefManager.getInstance(getContext()).isLoggedIn()) {
-            getActivity().finish();
             startActivity(new Intent(getContext(), LoginActivity.class));
         }
 

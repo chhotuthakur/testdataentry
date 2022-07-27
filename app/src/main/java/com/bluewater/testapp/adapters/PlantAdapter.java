@@ -62,7 +62,7 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.ViewHolder>{
             super(itemView);
 
             user_id = itemView.findViewById(R.id.user_id_text);
-            updated = itemView.findViewById(R.id.updated);
+            //updated = itemView.findViewById(R.id.updated);
             volt = itemView.findViewById(R.id.volt);
             hpp = itemView.findViewById(R.id.hpp);
             rwp = itemView.findViewById(R.id.rwp);

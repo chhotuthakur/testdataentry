@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.bluewater.testapp.fragments.AccountFragment;
 import com.bluewater.testapp.helpers.Constants;
 import com.bluewater.testapp.helpers.RequestHandler;
 import com.bluewater.testapp.helpers.SharedPrefManager;
@@ -106,6 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                         //getting the user from the response
                         JSONObject userJson = obj.getJSONObject("user");
 
+
                         //creating a new user object
                         User user = new User(
                                 userJson.getInt("id"),
@@ -120,7 +122,10 @@ public class LoginActivity extends AppCompatActivity {
                         //starting the profile activity
                         finish();
                         Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                        Intent logi = new Intent(LoginActivity.this, AccountFragment.class);
+                        startActivity(logi);
+                        //startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     } else {
                         Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                     }
